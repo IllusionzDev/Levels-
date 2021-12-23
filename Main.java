@@ -58,7 +58,6 @@ public final class Main extends JavaPlugin implements Listener {
         Block block = e.getBlock();
         Material blockMaterial = block.getBlockData().getMaterial();
       
-        /* 25 * (MaxLevel / Level) / (BLOCK_VALUE / 2) / 2 = 6.25 XP if the block value was 100 */
         if (blockConfig.getConfig().getInt("blocks." + blockMaterial) > 0 && !e.isCancelled())
         {
             LevelGetter.getPlayerLevel(ply).addXP(blockConfig.getConfig().getInt("blocks." + blockMaterial));
